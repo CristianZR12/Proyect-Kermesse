@@ -1,0 +1,52 @@
+﻿@model Kermesse_Proyect.Models.TasaCambioDet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Eliminar</h2>
+
+    <h3>¿Esta seguro de eliminar esta Tasa de Cambio Detalle?</h3>
+    <div>
+        <h4>Tasa Cambio Det</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fecha)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tipoCambio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tipoCambio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TasaCambio1.mes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TasaCambio1.mes)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index")
+            </div>
+        }
+    </div>
+</div>

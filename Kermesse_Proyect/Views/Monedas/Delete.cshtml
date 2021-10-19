@@ -1,0 +1,44 @@
+﻿@model Kermesse_Proyect.Models.Moneda
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Eliminar</h2>
+
+    <h3>¿Esta seguro que quiere eliminar esta Moneda?</h3>
+    <div>
+        <h4>Moneda</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.simbolo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.simbolo)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index")
+            </div>
+        }
+    </div>
+
+</div>

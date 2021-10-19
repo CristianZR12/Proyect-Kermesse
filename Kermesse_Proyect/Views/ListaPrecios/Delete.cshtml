@@ -1,0 +1,52 @@
+﻿@model Kermesse_Proyect.Models.ListaPrecio
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Eliminar</h2>
+
+    <h3>¿Esta seguro de eliminar esta Lista de Precio?</h3>
+    <div>
+        <h4>Lista Precio</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.descripcion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kermesse1.nombre)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index")
+            </div>
+        }
+    </div>
+</div>

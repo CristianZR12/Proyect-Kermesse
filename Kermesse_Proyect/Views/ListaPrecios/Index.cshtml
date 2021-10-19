@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Kermesse_Proyect.Models.ListaPrecio>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Lista Precio</h2>
+
+    <p>
+        @Html.ActionLink("Nuevo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idListaPrecio }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.idListaPrecio }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idListaPrecio })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

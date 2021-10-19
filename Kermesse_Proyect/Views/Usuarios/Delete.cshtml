@@ -1,0 +1,67 @@
+﻿@model Kermesse_Proyect.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Eliminar</h2>
+
+    <h3>¿Desea eliminar este Usuario?</h3>
+    <div>
+        <h4>Usuario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.userName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.userName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.pwd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.pwd)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nombres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombres)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.apellidos)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.apellidos)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index")
+            </div>
+        }
+    </div>
+</div>

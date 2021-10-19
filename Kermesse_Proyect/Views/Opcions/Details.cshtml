@@ -1,0 +1,28 @@
+﻿@model Kermesse_Proyect.Models.Opcion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Detalle</h2>
+
+    <div>
+        <h4>Opcion</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.opcionDescripcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.opcionDescripcion)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idOpcion }) |
+        @Html.ActionLink("Regresar", "Index")
+    </p>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Kermesse_Proyect.Models.CategoriaProducto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Categoria Producto</h2>
+
+    <p>
+        @Html.ActionLink("Nuevo", "Create")
+    </p>
+    <table class="table table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idCatProd }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.idCatProd }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idCatProd })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

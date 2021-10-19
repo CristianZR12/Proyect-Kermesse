@@ -1,0 +1,45 @@
+﻿@model Kermesse_Proyect.Models.TasaCambioDet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-11 mx-auto">
+    <h2>Detalle</h2>
+
+    <div>
+        <h4>Tasa Cambio Det</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fecha)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tipoCambio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tipoCambio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TasaCambio1.mes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TasaCambio1.mes)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idTasaCambioDet }) |
+        @Html.ActionLink("Regresar", "Index")
+    </p>
+</div>

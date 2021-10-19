@@ -1,0 +1,86 @@
+﻿@model Kermesse_Proyect.Models.Parroquia
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-xl-5 col-md-8 col-sm-10 mx-auto">
+    <div class="card">
+
+        <div class="card-header">
+            <h3 class="card-text text-center">Parroquia</h3>
+        </div>
+
+        <div class="card-body">
+            
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                   
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.parroco, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.parroco, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.parroco, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.logo, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.logo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.logo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        @Html.LabelFor(model => model.sitioWeb, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.sitioWeb, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.sitioWeb, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex flex-column align-items-center">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Guardar" class="btn btn-block btn-success" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Regresar", "Index")
+            </div>
+
+        </div>
+    </div>
+</div>
